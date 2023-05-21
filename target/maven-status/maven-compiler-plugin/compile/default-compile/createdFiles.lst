@@ -5,6 +5,7 @@ com\portfolio\jie\Entity\Persona.class
 com\portfolio\jie\JieApplication.class
 com\portfolio\jie\Entity\Educacion.class
 com\portfolio\jie\Dto\dtoEducacion.class
+com\portfolio\jie\Dto\dtoHabilidad.class
 com\portfolio\jie\Repository\RExperiencia.class
 com\portfolio\jie\Security\Service\UserDetailsImpl.class
 com\portfolio\jie\Repository\IPersonaRepository.class
@@ -30,11 +31,15 @@ com\portfolio\jie\Security\Controller\Mensaje.class
 com\portfolio\jie\Security\Enums\RolNombre.class
 com\portfolio\jie\Entity\Proyecto.class
 com\portfolio\jie\Repository\REducacion.class
+com\portfolio\jie\Repository\RHabilidad.class
 com\portfolio\jie\Security\jwt\JwtTokenFilter.class
 com\portfolio\jie\Security\Dto\LoginUsuario.class
 com\portfolio\jie\Repository\RProyecto.class
 com\portfolio\jie\Service\SExperiencia.class
+com\portfolio\jie\Service\SHabilidad.class
 com\portfolio\jie\Security\Service\RolService.class
+com\portfolio\jie\Controller\CHabilidad.class
 com\portfolio\jie\Security\Service\UsuarioService.class
 com\portfolio\jie\Controller\CProyecto.class
+com\portfolio\jie\Entity\Habilidad.class
 com\portfolio\jie\Security\Controller\AuthController.class
