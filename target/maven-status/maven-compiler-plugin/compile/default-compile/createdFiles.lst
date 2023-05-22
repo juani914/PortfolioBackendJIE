@@ -25,6 +25,7 @@ com\portfolio\jie\Service\Seducacion.class
 com\portfolio\jie\Controller\PersonaController.class
 com\portfolio\jie\Interface\IPersonaService.class
 com\portfolio\jie\Security\jwt\JwtProvider.class
+com\portfolio\jie\WebConfig.class
 com\portfolio\jie\Dto\dtoProyecto.class
 com\portfolio\jie\Dto\dtoPersona.class
 com\portfolio\jie\Security\Controller\Mensaje.class
