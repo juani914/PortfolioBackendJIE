@@ -92,6 +92,6 @@ public class CProyecto {
         proyecto.setDescripcionE(dtoproyecto.getDescripcionE());
         sProyecto.save(proyecto);
         
-        return new ResponseEntity(new Mensaje("Educacion actualizada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Proyecto actualizado"), HttpStatus.OK);
     }
 }
