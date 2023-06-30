@@ -13,18 +13,15 @@ public class dtoProyecto {
     private String nombreE;
     @NotBlank
     private String descripcionE;
-    @NotBlank
-    private String imgE;
-    private String urlE;
+   
+   
     
     public dtoProyecto() {
     }
 
-    public dtoProyecto(String nombreE, String descripcionE, String imgE, String urlE) {
+    public dtoProyecto(String nombreE, String descripcionE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
-        this.imgE = imgE;
-        this.urlE = urlE;
     }
 
     public String getNombreE() {
@@ -43,23 +40,7 @@ public class dtoProyecto {
         this.descripcionE = descripcionE;
     }
 
-    public String getImgE() {
-        return imgE;
-    }
 
-    public void setImgE(String imgE) {
-        this.imgE = imgE;
-    }
-
-    public String getUrlE() {
-        return urlE;
-    }
-
-    public void setUrlE(String urlE) {
-        this.urlE = urlE;
-    }
-
-  
     
     
 }

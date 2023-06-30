@@ -62,7 +62,7 @@ public class CExperiencia {
         }
 
         Experiencia experiencia = new Experiencia(
-                dtoexperiencia.getNombreE(), dtoexperiencia.getDescripcionE(), dtoexperiencia.getImgE()
+                dtoexperiencia.getNombreE(), dtoexperiencia.getDescripcionE()
         );
         sExperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje("Experiencia creada"), HttpStatus.OK);
@@ -85,7 +85,6 @@ public class CExperiencia {
 
         experiencia.setNombreE(dtoexperiencia.getNombreE());
         experiencia.setDescripcionE(dtoexperiencia.getDescripcionE());
-        experiencia.setImgE(dtoexperiencia.getImgE());
         sExperiencia.save(experiencia);
 
         return new ResponseEntity(new Mensaje("Experiencia actualizada"), HttpStatus.OK);
