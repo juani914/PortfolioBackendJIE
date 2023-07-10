@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/personas")
-@CrossOrigin(origins = {"https://jiefrontend.web.app","http://localhost:4200"})
+@CrossOrigin(origins = {"https://jiefrontend.web.app", "http://localhost:4200"})
 public class PersonaController {
 
     @Autowired
@@ -26,13 +26,13 @@ public class PersonaController {
         List<Persona> list = personaService.list();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
-    
+
     @GetMapping("/detail/{id}")
     public ResponseEntity<Persona> getById(@PathVariable("id") int id) {
         if (!personaService.existsById(id)) {
             return ResponseEntity.notFound().build();
         }
-        
+
         Optional<Persona> persona = personaService.getOne(id);
         if (persona.isPresent()) {
             return ResponseEntity.ok(persona.get());
@@ -40,7 +40,7 @@ public class PersonaController {
             return ResponseEntity.notFound().build();
         }
     }
-    
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Mensaje> delete(@PathVariable("id") int id) {
         if (!personaService.existsById(id)) {
@@ -58,15 +58,15 @@ public class PersonaController {
         if (personaService.existsByNombre(dtopersona.getNombre())) {
             return ResponseEntity.badRequest().body(new Mensaje("Ese nombre ya existe"));
         }
-        
+
         Persona persona = new Persona();
         persona.setNombre(dtopersona.getNombre());
         persona.setApellido(dtopersona.getApellido());
         persona.setDescripcion(dtopersona.getDescripcion());
         persona.setImg(dtopersona.getImg());
-        
+
         personaService.save(persona);
-        
+
         return ResponseEntity.ok(new Mensaje("Persona creada"));
     }
 
@@ -81,7 +81,7 @@ public class PersonaController {
         if (StringUtils.isBlank(dtopersona.getNombre())) {
             return ResponseEntity.badRequest().body(new Mensaje("El campo no puede estar vacio"));
         }
-        
+
         Optional<Persona> persona = personaService.getOne(id);
         if (persona.isPresent()) {
             Persona personaToUpdate = persona.get();
@@ -89,18 +89,18 @@ public class PersonaController {
             personaToUpdate.setApellido(dtopersona.getApellido());
             personaToUpdate.setDescripcion(dtopersona.getDescripcion());
             personaToUpdate.setImg(dtopersona.getImg());
-            
+
             personaService.save(personaToUpdate);
-            
+
             return ResponseEntity.ok(new Mensaje("Persona actualizada"));
         } else {
             return ResponseEntity.notFound().build();
         }
     }
 
-    @GetMapping("/traer/perfil/{nombre}")
-    public ResponseEntity<Persona> getPerfil(@PathVariable("nombre") String nombre) {
-        Optional<Persona> perfil = personaService.getPerfil(nombre);
+    @GetMapping("/traer/perfil/{id}")
+    public ResponseEntity<Persona> getPerfil(@PathVariable("id") int id) {
+        Optional<Persona> perfil = personaService.getOne(id);
         if (perfil.isPresent()) {
             return ResponseEntity.ok(perfil.get());
         } else {
