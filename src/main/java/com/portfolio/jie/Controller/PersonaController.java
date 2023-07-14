@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/personas")
-@CrossOrigin(origins = {"https://jiefrontend.web.app", "http://localhost:4200"})
+@CrossOrigin(origins = {"https://portfoliojie.web.app/", "http://localhost:4200"})
 public class PersonaController {
 
     @Autowired
