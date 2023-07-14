@@ -21,6 +21,13 @@ public class PersonaController {
     @Autowired
     ImpPersonaService personaService;
 
+    
+    @GetMapping("/")
+    public ResponseEntity<List<Persona>> getAllPersonas() {
+        List<Persona> personas = personaService.list();
+        return ResponseEntity.ok(personas);
+    }
+    
     @GetMapping("/lista")
     public ResponseEntity<List<Persona>> list() {
         List<Persona> list = personaService.list();
